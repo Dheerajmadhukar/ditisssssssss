@@ -1,2 +1,0 @@
-# ditisssssssss
-trip
