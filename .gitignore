@@ -1,0 +1,5 @@
+config.py
+logs/
+*.c
+!program_8.c
+dev.txt
