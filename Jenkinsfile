@@ -9,6 +9,7 @@ pipeline {
              step {
                  sh 'uname -a'
              }
+         }
         }
     }
 }
