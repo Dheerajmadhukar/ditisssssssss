@@ -1,17 +1,19 @@
 pipeline {
     agent any 
     stages {
-        stage('Hello World Stage') {
+        stage('Clone the repo') {
             steps {
-                echo 'Hello World!'
+                git branch: "main"
+                url: "https://github.com/Dheerajmadhukar/ditisssssssss"
             }
         }
-        stage('check docker version'){
+        stage('Run docker container with ditisss project') {
             steps {
                 sh """
-                sudo docker --version
+                sudo docker rm -f demo1server
+                sudo docker run -d --name demo1server -p 80:80 -v /var/lib/jenkins/workspace/ss:/usr/local/apache2/htdocs httpd:latest 
                 """
             }
-        }
+        } 
     }
 }
