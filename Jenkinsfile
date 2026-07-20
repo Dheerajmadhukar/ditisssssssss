@@ -6,10 +6,10 @@ pipeline {
                 echo 'Hello World!'
             }
         }
-        stage('Run linux command'){
+        stage('check docker version'){
             steps {
                 sh """
-                uname -a
+                sudo docker --version
                 """
             }
         }
