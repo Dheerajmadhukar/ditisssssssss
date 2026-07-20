@@ -5,8 +5,12 @@ pipeline {
             steps {
                 echo 'Hello World!'
             }
+        }
+        stage('Run linux command'){
             steps {
-                 sh 'uname -a'
+                sh """
+                uname -a
+                """
             }
         }
     }
