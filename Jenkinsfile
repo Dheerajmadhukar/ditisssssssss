@@ -5,11 +5,9 @@ pipeline {
             steps {
                 echo 'Hello World!'
             }
-         stage('Check uname') {
-             steps {
+            steps {
                  sh 'uname -a'
-             }
-         }
+            }
         }
     }
 }
