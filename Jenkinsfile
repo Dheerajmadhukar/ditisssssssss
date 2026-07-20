@@ -5,6 +5,9 @@ pipeline {
             steps {
                 echo 'Hello World!'
             }
+         stage('Check uname') {
+             step {
+                 sh 'uname -a'
         }
     }
 }
