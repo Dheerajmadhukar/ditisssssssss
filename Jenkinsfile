@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Clone the repo') {
             steps {
-                git branch: "main"
+                git branch: "main",
                 url: "https://github.com/Dheerajmadhukar/ditisssssssss"
             }
         }
