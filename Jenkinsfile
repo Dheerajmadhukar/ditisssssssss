@@ -10,7 +10,7 @@ pipeline {
         stage('Shift-left SAST') {
             steps {
                 sh """
-                cd /var/lib/jenkins/workspace/ss
+                cd /var/lib/jenkins/workspace/ci-demo
                 pysonar --sonar-host-url=http://18.133.65.127:9000 --sonar-token=sqp_c321da032730b322c7f07e7dfc0b2d05508a8d75 --sonar-project-key=demo1_ci
                 """
             }
@@ -19,7 +19,7 @@ pipeline {
             steps {
                 sh """
                 sudo docker rm -f demo1server
-                sudo docker run -d --name demo1server -p 80:80 -v /var/lib/jenkins/workspace/ss:/usr/local/apache2/htdocs httpd:latest 
+                sudo docker run -d --name demo1server -p 80:80 -v /var/lib/jenkins/workspace/ci-demo:/usr/local/apache2/htdocs httpd:latest 
                 """
             }
         } 
