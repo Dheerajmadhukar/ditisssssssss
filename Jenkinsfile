@@ -7,6 +7,14 @@ pipeline {
                 url: "https://github.com/Dheerajmadhukar/ditisssssssss"
             }
         }
+        stage('Shift-left SAST') {
+            steps {
+                sh """
+                cd /var/lib/jenkins/workspace/ss
+                pysonar --sonar-host-url=http://18.133.65.127:9000 --sonar-token=sqp_c321da032730b322c7f07e7dfc0b2d05508a8d75 --sonar-project-key=demo1_ci
+                """
+            }
+        }
         stage('Run docker container with ditisss project') {
             steps {
                 sh """
